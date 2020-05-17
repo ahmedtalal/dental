@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="rippleStyle">
+        <item name="mrl_rippleOverlay">true</item>
+        <item name="mrl_rippleColor">#F18D8D</item>
+        <item name="mrl_rippleAlpha">0.1</item>
+    </style>
+
+</resources>

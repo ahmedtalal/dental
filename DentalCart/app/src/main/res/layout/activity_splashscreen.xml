@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.SplashscreenActivity"
+    android:orientation="vertical"
+    android:background="@drawable/splashscreen"
+    >
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:fontFamily="monospace"
+        android:background="@drawable/rounded_skiptv"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/skipTV"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dental Cart"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:layout_centerInParent="true"
+        />
+
+
+</RelativeLayout>

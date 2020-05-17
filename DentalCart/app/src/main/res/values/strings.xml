@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DentalCart</string>
+    <string name="forgot_message">Enter your email address below and we will send you instructions on how to change your password</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="add_item">Add Item</string>
+    <string name="offers">Offers</string>
+    <string name="settings">Settings</string>
+    <string name="feedbacks">We are very happy if you give us your feedback about our products ^__^</string>
+    <string name="channel_name">mychanel</string>
+    <string name="categories">Categories</string>
+</resources>

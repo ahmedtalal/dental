@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.RegisterActivity"
+    android:background="@color/colorPrimary"
+    >
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="100dp"
+                    android:background="@drawable/rounded_cardview"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sign Up"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="#101010"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Register yourself"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="UserName :"
+                        android:paddingLeft="10dp"
+                        android:textSize="16sp"
+                        android:id="@+id/nameRegister_id"
+                        android:drawableRight="@drawable/ic_person_black_24dp"
+                        android:paddingRight="10dp"
+                        android:inputType="text"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Email :"
+                        android:paddingLeft="10dp"
+                        android:textSize="16sp"
+                        android:id="@+id/email_register_id"
+                        android:drawableRight="@drawable/ic_email_black_24dp"
+                        android:paddingRight="10dp"
+                        android:inputType="textEmailAddress"
+                        />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintEnabled="false"
+                        app:passwordToggleTint="#A9A7A7"
+                        >
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Password :"
+                            android:paddingLeft="10dp"
+                            android:textSize="16sp"
+                            android:id="@+id/password_register_id"
+                            android:paddingRight="10dp"
+                            android:inputType="textWebPassword"
+                            android:background="@drawable/rounded_edittext"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintEnabled="false"
+                        app:passwordToggleTint="#A9A7A7"
+                        >
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Confirm Password :"
+                            android:paddingLeft="10dp"
+                            android:textSize="16sp"
+                            android:id="@+id/repassword_register_id"
+                            android:paddingRight="10dp"
+                            android:inputType="textWebPassword"
+                            android:background="@drawable/rounded_edittext"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="15dp"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="5dp"
+                        >
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/rippleStyle"
+                            >
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Sign Up"
+                                android:textAllCaps="true"
+                                android:textSize="20sp"
+                                android:textColor="#FFFF"
+                                android:background="@color/color2"
+                                android:fontFamily="sans-serif"
+                                android:id="@+id/registerButton"
+                                />
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:text="Do you have an account?"
+                            android:textStyle="bold"
+                            android:textSize="14dp"
+                            android:gravity="right|center"
+                            android:paddingRight="10dp"
+                            android:fontFamily="monospace"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:text="Sign In"
+                            android:textStyle="bold"
+                            android:textSize="18dp"
+                            android:gravity="left|center"
+                            android:textColor="@color/color1"
+                            android:id="@+id/signInID"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/logo"
+                    android:layout_centerHorizontal="true"
+                    app:civ_border_color="@color/color4"
+                    app:civ_border_width="1dp"
+                    android:layout_marginTop="50dp"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

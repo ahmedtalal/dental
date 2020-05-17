@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.AddproductActivity"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/addProductToolbar_id"
+            app:title="Add Product"
+            android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_done"
+            android:scaleType="fitEnd"
+            android:paddingRight="8dp"
+            android:id="@+id/done_id"
+            android:padding="5dp"
+            />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:layout_margin="15dp"
+                >
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/logo"
+                        android:id="@+id/productImgo_id"
+                        app:civ_border_color="@color/color4"
+                        app:civ_border_width="1dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_camera"
+                        android:id="@+id/camera_id"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentRight="true"
+                        />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Product Name :"
+                        android:paddingLeft="10dp"
+                        android:textSize="15sp"
+                        android:id="@+id/productName_id"
+                        android:paddingRight="10dp"
+                        android:inputType="text"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:hint="Price :"
+                        android:paddingLeft="10dp"
+                        android:textSize="15sp"
+                        android:id="@+id/price_id"
+                        android:paddingRight="10dp"
+                        android:inputType="number"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Discount :"
+                android:paddingLeft="10dp"
+                android:textSize="15sp"
+                android:id="@+id/discount_id"
+                android:paddingRight="10dp"
+                android:inputType="number"
+                />
+            <EditText
+                android:id="@+id/description_id"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:background="@drawable/rounded_edittext"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:scrollbars="vertical"
+                android:elevation="8dp"
+                android:hint="Description :"
+                android:gravity="start"
+                android:padding="10dp"
+                android:textColorHint="#B6B5B5"
+                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_margin="15sp"
+                >
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Favorite"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:id="@+id/favorite_id"
+                    android:shadowColor="@color/color5"
+                    android:drawablePadding="7dp"
+                    android:gravity="center"
+                    android:textColor="@color/color3"
+                    />
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Unfavorite"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:id="@+id/unfavorite_id"
+                    android:shadowColor="@color/color5"
+                    android:drawablePadding="7dp"
+                    android:gravity="center"
+                    android:textColor="@color/color3"
+                    />
+            </RadioGroup>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:text="Categories"
+                android:textStyle="bold"
+                />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="5dp"
+                >
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Orthodontics"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:id="@+id/Orthodontics_id"
+                    android:shadowColor="@color/color5"
+                    android:drawablePadding="7dp"
+                    android:gravity="center"
+                    android:textColor="@color/color3"
+                    />
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Equipments"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:id="@+id/Equipments_id"
+                    android:shadowColor="@color/color5"
+                    android:drawablePadding="7dp"
+                    android:gravity="center"
+                    android:textColor="@color/color3"
+                    />
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Periodontics"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:id="@+id/Periodontics_id"
+                    android:shadowColor="@color/color5"
+                    android:drawablePadding="7dp"
+                    android:gravity="center"
+                    android:textColor="@color/color3"
+                    />
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Prosthodonics"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:id="@+id/Prosthodonics_id"
+                    android:shadowColor="@color/color5"
+                    android:drawablePadding="7dp"
+                    android:gravity="center"
+                    android:textColor="@color/color3"
+                    />
+            </RadioGroup>
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rateo_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="6"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:progressTint="@color/color3"
+                android:layout_marginBottom="20dp"
+                android:progressBackgroundTint="@color/color2"
+                />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
