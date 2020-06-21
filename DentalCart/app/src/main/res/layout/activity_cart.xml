@@ -12,7 +12,7 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/color3"
+        android:background="@color/colorPrimary"
         app:title="Cart"
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
         android:id="@+id/cartToolbar_id"

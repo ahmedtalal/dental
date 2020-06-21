@@ -38,22 +38,22 @@ public class GetAllProducts {
             @Override
             public void onChanged(List<ItemModel> itemModels) {
                 for (ItemModel itemModel : itemModels){
-                    if (itemModel.getFavorite().equals("true")){
+                    if (itemModel.getFavorite().equalsIgnoreCase("true")){
                         favoriteProduct.add(itemModel) ;
                     }
-                    if (!itemModel.getDiscount().equals("0")){
+                    if (!itemModel.getDiscount().equalsIgnoreCase("0")){
                         offerProduct.add(itemModel) ;
                     }
-                    if (itemModel.getCategory().equals("orthodontics")){
+                    if (itemModel.getCategory().equalsIgnoreCase("orthodontics")){
                         orthodonticsList.add(itemModel) ;
                     }
-                    if (itemModel.getCategory().equals("equipments")){
+                    if (itemModel.getCategory().equalsIgnoreCase("equipments")){
                         equipmentList.add(itemModel) ;
                     }
-                    if (itemModel.getCategory().equals("periodontics")){
+                    if (itemModel.getCategory().equalsIgnoreCase("periodontics")){
                         periodonticsList.add(itemModel) ;
                     }
-                    if (itemModel.getCategory().equals("prosthodonics")){
+                    if (itemModel.getCategory().equalsIgnoreCase("prosthodonics")){
                         prosthodonicsList.add(itemModel) ;
                     }
                 }

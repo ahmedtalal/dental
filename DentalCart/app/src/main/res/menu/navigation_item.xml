@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Categories">
+        <menu>
+            <item
+                android:title="Orthodontics"
+                android:id="@+id/nav_orthodontics"
+                android:icon="@drawable/ic_brace"
+                />
+
+            <item
+                android:title="Equipments"
+                android:id="@+id/nav_equipments"
+                android:icon="@drawable/ic_equipments"
+                />
+
+            <item
+                android:title="Periodontics"
+                android:id="@+id/nav_periodontics"
+                android:icon="@drawable/ic_toolsutensils"
+                />
+            <item
+                android:title="Prosthodonics"
+                android:id="@+id/nav_prosthodonics"
+                android:icon="@drawable/ic_prosthodonics"
+                />
+        </menu>
+    </item>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:title="My Profile"
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_person"
+                />
+            <item
+                android:title="Tell a friend"
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_sharego"
+                />
+            <item
+                android:title="Logout"
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                />
+        </menu>
+
+    </item>
+</menu>

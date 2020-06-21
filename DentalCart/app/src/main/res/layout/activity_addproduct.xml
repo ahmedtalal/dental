@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="horizontal"
-                android:layout_margin="15dp"
+                android:layout_margin="10dp"
                 >
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -107,6 +107,7 @@
                         android:id="@+id/productName_id"
                         android:paddingRight="10dp"
                         android:inputType="text"
+                        android:elevation="8dp"
                         />
                     <EditText
                         android:layout_width="match_parent"
@@ -122,6 +123,7 @@
                         android:id="@+id/price_id"
                         android:paddingRight="10dp"
                         android:inputType="number"
+                        android:elevation="8dp"
                         />
 
                 </LinearLayout>
@@ -141,6 +143,7 @@
                 android:id="@+id/discount_id"
                 android:paddingRight="10dp"
                 android:inputType="number"
+                android:elevation="8dp"
                 />
             <EditText
                 android:id="@+id/description_id"
@@ -162,7 +165,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:layout_margin="15sp"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="8dp"
                 >
                 <RadioButton
                     android:layout_width="0dp"
@@ -191,73 +197,35 @@
                     android:textColor="@color/color3"
                     />
             </RadioGroup>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15sp"
-                android:text="Categories"
-                android:textStyle="bold"
-                />
-            <RadioGroup
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginLeft="15sp"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
                 >
-                <RadioButton
+
+                <TextView
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Orthodontics"
-                    android:textSize="12sp"
+                    android:layout_marginLeft="15sp"
+                    android:text="Categories"
                     android:textStyle="bold"
-                    android:id="@+id/Orthodontics_id"
-                    android:shadowColor="@color/color5"
-                    android:drawablePadding="7dp"
-                    android:gravity="center"
-                    android:textColor="@color/color3"
                     />
-                <RadioButton
+
+                <Spinner
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="Equipments"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:id="@+id/Equipments_id"
-                    android:shadowColor="@color/color5"
-                    android:drawablePadding="7dp"
-                    android:gravity="center"
-                    android:textColor="@color/color3"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner_id"
+                    android:layout_weight="1.5"
                     />
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="Periodontics"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:id="@+id/Periodontics_id"
-                    android:shadowColor="@color/color5"
-                    android:drawablePadding="7dp"
-                    android:gravity="center"
-                    android:textColor="@color/color3"
-                    />
-                <RadioButton
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="Prosthodonics"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:id="@+id/Prosthodonics_id"
-                    android:shadowColor="@color/color5"
-                    android:drawablePadding="7dp"
-                    android:gravity="center"
-                    android:textColor="@color/color3"
-                    />
-            </RadioGroup>
+
+            </LinearLayout>
+
             <androidx.appcompat.widget.AppCompatRatingBar
                 android:id="@+id/rateo_id"
                 android:layout_width="wrap_content"

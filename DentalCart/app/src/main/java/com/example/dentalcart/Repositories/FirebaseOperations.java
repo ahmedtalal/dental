@@ -106,7 +106,7 @@ public class FirebaseOperations {
         }
     }
 
-    // this mehtod is used to handel if you fogot your password
+    // this mehtod is used to handel if you forgot your password
     public static void forgotPassword(Context context , ProgressDialog progressDialog , String email){
         AUTH.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

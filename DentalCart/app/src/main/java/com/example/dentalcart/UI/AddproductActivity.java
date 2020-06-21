@@ -7,9 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -52,21 +55,22 @@ public class AddproductActivity extends AppCompatActivity implements View.OnClic
     RadioButton unfavoriteId;
     @BindView(R.id.rateo_id)
     AppCompatRatingBar rateoId;
+    @BindView(R.id.spinner_id)
+    Spinner spinnerId;
 
     private static final int RN_PHOTO = 2;
-    @BindView(R.id.Orthodontics_id)
-    RadioButton OrthodonticsId;
-    @BindView(R.id.Equipments_id)
-    RadioButton EquipmentsId;
-    @BindView(R.id.Periodontics_id)
-    RadioButton PeriodonticsId;
-    @BindView(R.id.Prosthodonics_id)
-    RadioButton ProsthodonicsId;
     private Uri imageUri;
     private DatabaseReference reference;
     private String favoriteo = null;
     private ProgressDialog progressDialog;
-    private String category = null ;
+    private String category = null;
+
+    private String[] categoriesType = {
+           "orthodontics" ,
+           "equipments" ,
+           "periodontics" ,
+           "prosthodonics"
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +92,39 @@ public class AddproductActivity extends AppCompatActivity implements View.OnClic
         doneId.setOnClickListener(this::onClick);
         favoriteId.setOnClickListener(this::onClick);
         unfavoriteId.setOnClickListener(this::onClick);
+
+        setSprinngItems();
+    }
+
+    // this method is used to set date in spinner
+    private void setSprinngItems() {
+        ArrayAdapter adapter = new ArrayAdapter(this , android.R.layout.simple_spinner_item , categoriesType) ;
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerId.setAdapter(adapter);
+        spinnerId.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (categoriesType[position]){
+                    case "orthodontics" :
+                        category = "orthodontics" ;
+                        break;
+                    case "equipments" :
+                        category = "equipments" ;
+                        break;
+                    case "periodontics" :
+                        category = "periodontics" ;
+                        break;
+                    case "prosthodonics" :
+                        category = "prosthodonics" ;
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                category = "orthodontics" ;
+            }
+        });
     }
 
     @Override
@@ -104,18 +141,6 @@ public class AddproductActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.unfavorite_id:
                 favoriteo = "false";
-                break;
-            case R.id.Orthodontics_id:
-                category = "orthodontics" ;
-                break;
-            case R.id.Equipments_id:
-                category = "equipments" ;
-                break;
-            case R.id.Periodontics_id:
-                category = "periodontics" ;
-                break;
-            case R.id.Prosthodonics_id:
-                category = "prosthodonics" ;
                 break;
         }
     }
@@ -151,6 +176,10 @@ public class AddproductActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(AddproductActivity.this, "Please Enter the photo", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (category == null){
+            Toast.makeText(AddproductActivity.this, "Please select category", Toast.LENGTH_SHORT).show();
+            return;
+        }
         ItemModel itemModel = new ItemModel
                 (
                         descrption,
@@ -159,7 +188,7 @@ public class AddproductActivity extends AppCompatActivity implements View.OnClic
                         id,
                         name,
                         rating,
-                        price ,
+                        price,
                         category
                 );
         progressDialog = new ProgressDialog(AddproductActivity.this);
@@ -169,37 +198,9 @@ public class AddproductActivity extends AppCompatActivity implements View.OnClic
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         GeneralOperations.AddProduct(itemModel, imageUri, progressDialog, AddproductActivity.this);
 
-        // create notification
-//        if (!discount.equals("0")){
-//            Log.i("no", "sssd");
-//            createNotification();
-//        }
     }
 
-//    @RequiresApi(api = Build.VERSION_CODES.O)
-//    private void createNotification() {
-//        String CHANNEL_ID = "my_channel_01";// The id of the channel.
-//        CharSequence name = getString(R.string.channel_name);// The user-visible name of the channel.
-//        int importance = NotificationManager.IMPORTANCE_HIGH;
-//        NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
-//            NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(AddproductActivity.this)
-//                    .setSmallIcon(R.drawable.ic_notifications)
-//                    .setContentTitle("Notification Alert ^__^ !")
-//                    .setContentText("Click here to check more discount offers for dental cart app")
-//                    .setChannelId(CHANNEL_ID)
-//                    .setAutoCancel(true)
-//                    .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
-//
-//            Intent intent = new Intent(AddproductActivity.this , MainActivity.class) ;
-//            PendingIntent pendingIntent = PendingIntent.getActivity(AddproductActivity.this,
-//                    0 , intent , PendingIntent.FLAG_UPDATE_CURRENT);
-//            nBuilder.setContentIntent(pendingIntent) ;
-//            NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            notificationManager.createNotificationChannel(mChannel);
-//        }
-//            notificationManager.notify(0,nBuilder.build());
-//    }
+
 
     private void openGallary() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);

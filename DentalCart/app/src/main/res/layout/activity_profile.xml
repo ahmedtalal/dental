@@ -14,7 +14,7 @@
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/updateToolbar_id"
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        android:background="@color/color3"
+        android:background="@color/colorPrimary"
         app:title="My Profile"
         />
 

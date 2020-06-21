@@ -9,4 +9,6 @@
     <string name="feedbacks">We are very happy if you give us your feedback about our products ^__^</string>
     <string name="channel_name">mychanel</string>
     <string name="categories">Categories</string>
+    <string name="close">Close</string>
+    <string name="open">Open</string>
 </resources>

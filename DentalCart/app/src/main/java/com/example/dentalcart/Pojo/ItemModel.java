@@ -15,7 +15,7 @@ public class ItemModel {
         this.rating = rating;
         this.price = price;
     }
-    public ItemModel(String description, String discount, String favorite, String id, String name, String photo, String rating, String price , String category ) {
+    public ItemModel(String category ,String description, String discount, String favorite, String id, String name, String photo, String rating, String price ) {
         this.description = description;
         this.discount = discount;
         this.favorite = favorite;
